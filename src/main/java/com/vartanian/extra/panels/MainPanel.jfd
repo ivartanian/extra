@@ -1,0 +1,82 @@
+JFDML JFormDesigner: "5.2.2.0.199" Java: "1.8.0_60" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp dialogPane::l:::x}"
+			"$verticalGroup": "par l {seq l {comp dialogPane:::p::p, space :0:0:x}}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"title": "Test"
+			addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseEntered", "thisMouseEntered", true ) )
+			addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseExited", "thisMouseExited", true ) )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+				"rows": 4
+			} ) {
+				name: "dialogPane"
+				"border": sfield com.jgoodies.forms.factories.Borders DIALOG_BORDER
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+					name: "checkboxPanel"
+					"minimumSize": new java.awt.Dimension( 15, 10 )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "checkBox1"
+						"text": "12"
+						"actionCommand": "12"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "checkBox1ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "checkBox2"
+						"text": "42"
+						"actionCommand": "42"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "checkBox2ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "checkBox3"
+						"text": "201"
+						"actionCommand": "201"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "checkBox3ActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+					name: "resultPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "resultLabel"
+						"text": "result = 0"
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane1"
+					add( new FormComponent( "javax.swing.JTree" ) {
+						name: "tree1"
+						"model": new javax.swing.tree.DefaultTreeModel( new javax.swing.tree.DefaultMutableTreeNode {
+							userObject: "Root Node"
+						} )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+					name: "buttonPanel"
+					auxiliary() {
+						"JavaCodeGenerator.variableName": "buttonPanel"
+					}
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "addButton"
+						"text": "add"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "removeButton"
+						"text": "remove"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "clearButton"
+						"text": "clear"
+					} )
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 425, 845 )
+		} )
+	}
+}

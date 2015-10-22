@@ -1,0 +1,12 @@
+WARN  | 2015-10-22 16:31:24 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
+WARN  | 2015-10-22 16:34:43 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
+WARN  | 2015-10-22 16:36:35 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
+WARN  | 2015-10-22 16:37:24 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
+WARN  | 2015-10-22 16:44:37 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
+WARN  | 2015-10-22 16:50:18 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
+WARN  | 2015-10-22 16:55:40 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
+WARN  | 2015-10-22 17:16:12 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
+WARN  | 2015-10-22 17:16:57 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
+WARN  | 2015-10-22 17:17:42 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
+WARN  | 2015-10-22 17:19:08 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: short file
+ERROR | 2015-10-22 17:19:22 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
