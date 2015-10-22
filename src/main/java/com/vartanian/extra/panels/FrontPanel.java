@@ -16,7 +16,7 @@ import java.awt.event.MouseEvent;
  */
 public class FrontPanel extends JFrame {
 
-    private static final Logger LOG = LogManager.getLogger(MainPanel.class);
+    private static final Logger LOG = LogManager.getLogger(FrontPanel.class);
     private final CheckBoxPanel checkBoxPanel = new CheckBoxPanel();
     private final TreePanel treePanel = new TreePanel();
 

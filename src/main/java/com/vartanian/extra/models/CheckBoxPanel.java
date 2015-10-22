@@ -22,7 +22,6 @@ public class CheckBoxPanel extends JPanel implements ItemListener {
 
         super(new BorderLayout());
 
-        //Create the check boxes.
         button12 = new JCheckBox("12");
         button12.setName("12");
         button12.setSelected(false);
@@ -35,17 +34,14 @@ public class CheckBoxPanel extends JPanel implements ItemListener {
         button201.setName("201");
         button201.setSelected(false);
 
-        //Register a listener for the check boxes.
         button12.addItemListener(this);
         button42.addItemListener(this);
         button201.addItemListener(this);
 
-        //Set up the result label
         resultLabel = new JLabel("resultLabel");
         resultLabel.setName("resultLabel");
         updateResult();
 
-        //Put the check boxes in a column in a panel
         JPanel checkPanel = new JPanel(new GridLayout(0, 3));
         checkPanel.add(button12);
         checkPanel.add(button42);
