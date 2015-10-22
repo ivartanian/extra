@@ -1,6 +1,5 @@
 package com.vartanian.extra.models;
 
-import com.vartanian.extra.panels.MainPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -8,7 +7,6 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -31,7 +29,6 @@ public class TreePanel extends JPanel {
         tree = new JTree(top);
         try (InputStream fontStream = getClass().getClassLoader().getResourceAsStream("fonts/festus.ttf");){
             Font font = Font.createFont(Font.PLAIN, fontStream);
-            setFont(font);
             tree.setFont(font);
         } catch (FontFormatException e) {
             LOG.error(e);
