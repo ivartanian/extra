@@ -10,3 +10,7 @@ WARN  | 2015-10-22 17:16:57 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) -
 WARN  | 2015-10-22 17:17:42 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
 WARN  | 2015-10-22 17:19:08 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: short file
 ERROR | 2015-10-22 17:19:22 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
+ERROR | 2015-10-22 22:01:37 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark
+ERROR | 2015-10-22 22:02:09 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark
+ERROR | 2015-10-22 22:02:30 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark
+ERROR | 2015-10-22 22:03:11 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark

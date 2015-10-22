@@ -1,6 +1,8 @@
 package com.vartanian.extra.panels;
 
 import com.jgoodies.forms.factories.Paddings;
+import com.vartanian.extra.animation.PanelAnimation;
+import com.vartanian.extra.animation.impl.Fade;
 import com.vartanian.extra.models.CheckBoxPanel;
 import com.vartanian.extra.models.TreePanel;
 import org.apache.logging.log4j.LogManager;
@@ -20,12 +22,21 @@ public class FrontPanel extends JFrame {
     private final CheckBoxPanel checkBoxPanel = new CheckBoxPanel();
     private final TreePanel treePanel = new TreePanel();
 
-    private boolean open = false;
+    private PanelAnimation panelAnimation;
 
     public FrontPanel() throws HeadlessException {
         super("Test panel");
 
         initComponents();
+    }
+
+    public PanelAnimation getPanelAnimation() {
+        return panelAnimation;
+    }
+
+    public FrontPanel setPanelAnimation(PanelAnimation panelAnimation) {
+        this.panelAnimation = panelAnimation;
+        return this;
     }
 
     private void initComponents() {
@@ -71,27 +82,9 @@ public class FrontPanel extends JFrame {
     }
 
     public static void main(String args[]) {
-
-        try {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            LOG.error(ex);
-        } catch (InstantiationException ex) {
-            LOG.error(ex);
-        } catch (IllegalAccessException ex) {
-            LOG.error(ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            LOG.error(ex);
-        }
-
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrontPanel().setVisible(true);
+                new FrontPanel().setPanelAnimation(new Fade()).setVisible(true);
             }
         });
     }

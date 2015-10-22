@@ -1,9 +1,11 @@
 package com.vartanian.extra.models;
 
+import com.vartanian.extra.utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
@@ -18,6 +20,7 @@ public class TreePanel extends JPanel {
     private static final Logger LOG = LogManager.getLogger(TreePanel.class);
 
     private JTree tree;
+    private Utils utils = new Utils();
 
     public TreePanel() {
 
@@ -27,14 +30,18 @@ public class TreePanel extends JPanel {
         createNodes(top);
 
         tree = new JTree(top);
-        try (InputStream fontStream = getClass().getClassLoader().getResourceAsStream("fonts/festus.ttf");){
-            Font font = Font.createFont(Font.PLAIN, fontStream);
-            tree.setFont(font);
-        } catch (FontFormatException e) {
-            LOG.error(e);
-        } catch (IOException e) {
-            LOG.error(e);
+        Font font;
+        boolean find;
+        if (!(find = utils.findFont("Festus"))){
+            font = utils.createFont(getClass().getClassLoader(), "fonts/festus.ttf");
+            find = utils.registerFont(font);
         }
+
+        if (find){
+            FontUIResource fontUIResource = new FontUIResource("Festus", 0, 14);
+            tree.setFont(fontUIResource);
+        }
+
         tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 
         JScrollPane treeView = new JScrollPane(tree);
@@ -43,8 +50,8 @@ public class TreePanel extends JPanel {
     }
 
     private void createNodes(DefaultMutableTreeNode top) {
-        DefaultMutableTreeNode group = null;
-        DefaultMutableTreeNode item = null;
+        DefaultMutableTreeNode group;
+        DefaultMutableTreeNode item;
 
         group = new DefaultMutableTreeNode("group1");
         top.add(group);

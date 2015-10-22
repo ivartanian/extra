@@ -9,7 +9,6 @@ import org.junit.Test;
 /**
  * Created by super on 10/22/15.
  */
-@Ignore
 public class MainPanelTest {
 
     private FrameFixture mainPanelTest;
@@ -17,6 +16,7 @@ public class MainPanelTest {
     @Before
     public void setUp() {
         mainPanelTest = new FrameFixture(new FrontPanel());
+        mainPanelTest.show();
     }
 
     @After
