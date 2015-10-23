@@ -21,8 +21,8 @@ public class MainPanelTest {
 
     @After
     public void tearDown() {
-
         mainPanelTest.cleanUp();
+        mainPanelTest = null;
     }
 
     @Test

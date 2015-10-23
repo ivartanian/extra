@@ -1,16 +1,64 @@
-WARN  | 2015-10-22 16:31:24 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
-WARN  | 2015-10-22 16:34:43 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
-WARN  | 2015-10-22 16:36:35 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
-WARN  | 2015-10-22 16:37:24 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading font data.
+WARN  | 2015-10-22 16:31:24 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading textFont data.
+WARN  | 2015-10-22 16:34:43 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading textFont data.
+WARN  | 2015-10-22 16:36:35 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading textFont data.
+WARN  | 2015-10-22 16:37:24 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Problem reading textFont data.
 WARN  | 2015-10-22 16:44:37 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
 WARN  | 2015-10-22 16:50:18 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
 WARN  | 2015-10-22 16:55:40 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
 WARN  | 2015-10-22 17:16:12 | [AWT-EventQueue-0] TreePanel (TreePanel.java:37) - java.io.IOException: Can't read fonts/festus.ttf
-WARN  | 2015-10-22 17:16:57 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
-WARN  | 2015-10-22 17:17:42 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
+WARN  | 2015-10-22 17:16:57 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa textFont
+WARN  | 2015-10-22 17:17:42 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa textFont
 WARN  | 2015-10-22 17:19:08 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: short file
-ERROR | 2015-10-22 17:19:22 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa font
+ERROR | 2015-10-22 17:19:22 | [AWT-EventQueue-0] TreePanel (TreePanel.java:35) - java.awt.FontFormatException: bad pfa textFont
 ERROR | 2015-10-22 22:01:37 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark
 ERROR | 2015-10-22 22:02:09 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark
 ERROR | 2015-10-22 22:02:30 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark
 ERROR | 2015-10-22 22:03:11 | [AWT-EventQueue-0] TreePanel (TreePanel.java:39) - java.io.IOException: Resetting to invalid mark
+ERROR | 2015-10-23 11:16:01 | [AWT-EventQueue-0] Utils (Utils.java:49) - Couldn't find file fonts/times new roman.ttf
+java.io.IOException: Problem reading textFont data.
+	at java.awt.Font.createFont0(Font.java:1000) ~[?:1.8.0_60]
+	at java.awt.Font.createFont(Font.java:877) ~[?:1.8.0_60]
+	at com.vartanian.extra.utils.Utils.createFont(Utils.java:45) [classes/:?]
+	at com.vartanian.extra.models.TreePanel.initialize(TreePanel.java:47) [classes/:?]
+	at com.vartanian.extra.models.TreePanel.<init>(TreePanel.java:33) [classes/:?]
+	at com.vartanian.extra.panels.FrontPanel.initComponents(FrontPanel.java:45) [classes/:?]
+	at com.vartanian.extra.panels.FrontPanel.<init>(FrontPanel.java:30) [classes/:?]
+	at com.vartanian.extra.panels.FrontPanel$2.run(FrontPanel.java:92) [classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311) [?:1.8.0_60]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756) [?:1.8.0_60]
+	at java.awt.EventQueue.access$500(EventQueue.java:97) [?:1.8.0_60]
+	at java.awt.EventQueue$3.run(EventQueue.java:709) [?:1.8.0_60]
+	at java.awt.EventQueue$3.run(EventQueue.java:703) [?:1.8.0_60]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_60]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76) [?:1.8.0_60]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82) [?:1.8.0_60]
+ERROR | 2015-10-23 11:16:34 | [AWT-EventQueue-0] Utils (Utils.java:49) - Couldn't find file fonts/times new roman.ttf
+java.io.IOException: Problem reading textFont data.
+	at java.awt.Font.createFont0(Font.java:1000) ~[?:1.8.0_60]
+	at java.awt.Font.createFont(Font.java:877) ~[?:1.8.0_60]
+	at com.vartanian.extra.utils.Utils.createFont(Utils.java:45) [classes/:?]
+	at com.vartanian.extra.models.TreePanel.initialize(TreePanel.java:47) [classes/:?]
+	at com.vartanian.extra.models.TreePanel.<init>(TreePanel.java:33) [classes/:?]
+	at com.vartanian.extra.panels.FrontPanel.initComponents(FrontPanel.java:45) [classes/:?]
+	at com.vartanian.extra.panels.FrontPanel.<init>(FrontPanel.java:30) [classes/:?]
+	at com.vartanian.extra.panels.FrontPanel$2.run(FrontPanel.java:92) [classes/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311) [?:1.8.0_60]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756) [?:1.8.0_60]
+	at java.awt.EventQueue.access$500(EventQueue.java:97) [?:1.8.0_60]
+	at java.awt.EventQueue$3.run(EventQueue.java:709) [?:1.8.0_60]
+	at java.awt.EventQueue$3.run(EventQueue.java:703) [?:1.8.0_60]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_60]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76) [?:1.8.0_60]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93) [?:1.8.0_60]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82) [?:1.8.0_60]

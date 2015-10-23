@@ -21,7 +21,7 @@ public class Utils {
         }
         Font[] fonts = getAllFonts();
         for (int i = 0; i < fonts.length; i++) {
-            if (fontName.equals(fonts[i].getFontName())) {
+            if (fontName.equalsIgnoreCase(fonts[i].getFontName())) {
                 return true;
             }
         }
@@ -44,11 +44,20 @@ public class Utils {
         try (InputStream fontStream = classLoader.getResourceAsStream(path);){
             return FontUIResource.createFont(Font.PLAIN, fontStream);
         } catch (FontFormatException e) {
-            LOG.error(e);
+            LOG.error("Bad font format", e);
         } catch (IOException e) {
-            LOG.error(e);
+            LOG.error("Couldn't find file " + path, e);
         }
         return null;
     }
+
+    public void changeBounds(Component component, int width, int height) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int locationX = (screenSize.width - width);
+        int locationY = height;
+        component.setBounds(locationX, locationY, width, screenSize.height);
+    }
+
+
 
 }

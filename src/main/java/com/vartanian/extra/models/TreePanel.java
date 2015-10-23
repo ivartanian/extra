@@ -9,8 +9,6 @@ import javax.swing.plaf.FontUIResource;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * Created by super on 10/22/15.
@@ -19,26 +17,35 @@ public class TreePanel extends JPanel {
 
     private static final Logger LOG = LogManager.getLogger(TreePanel.class);
 
+    private String textFont;
     private JTree tree;
     private Utils utils = new Utils();
 
     public TreePanel() {
+        this(null);
+    }
 
+    public TreePanel(String textFont) {
         super(new GridLayout(1, 0));
+        this.textFont = textFont;
+        initialize();
+    }
 
+    private void initialize() {
         DefaultMutableTreeNode top = new DefaultMutableTreeNode("Main node");
         createNodes(top);
 
         tree = new JTree(top);
-        Font font;
-        boolean find;
-        if (!(find = utils.findFont("Festus"))){
-            font = utils.createFont(getClass().getClassLoader(), "fonts/festus.ttf");
+        Font font = null;
+        boolean find = false;
+        if (this.textFont != null && !(find = utils.findFont(this.textFont))){
+            String path = new StringBuilder("fonts/").append(this.textFont.toLowerCase()).append(".ttf").toString();
+            font = utils.createFont(getClass().getClassLoader(), path);
             find = utils.registerFont(font);
         }
 
-        if (find){
-            FontUIResource fontUIResource = new FontUIResource("Festus", 0, 14);
+        if (find && font != null){
+            FontUIResource fontUIResource = new FontUIResource(font.getFontName(), 0, 14);
             tree.setFont(fontUIResource);
         }
 

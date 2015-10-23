@@ -1,10 +1,11 @@
 package com.vartanian.extra.panels;
 
 import com.jgoodies.forms.factories.Paddings;
-import com.vartanian.extra.animation.PanelAnimation;
+import com.vartanian.extra.animation.ComponentAnimation;
 import com.vartanian.extra.animation.impl.Fade;
 import com.vartanian.extra.models.CheckBoxPanel;
 import com.vartanian.extra.models.TreePanel;
+import com.vartanian.extra.utils.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,39 +20,39 @@ import java.awt.event.MouseEvent;
 public class FrontPanel extends JFrame {
 
     private static final Logger LOG = LogManager.getLogger(FrontPanel.class);
-    private final CheckBoxPanel checkBoxPanel = new CheckBoxPanel();
-    private final TreePanel treePanel = new TreePanel();
+    private Utils utils = new Utils();
+    private CheckBoxPanel checkBoxPanel = new CheckBoxPanel();
+    private TreePanel treePanel = new TreePanel();
 
-    private PanelAnimation panelAnimation;
+    private ComponentAnimation componentAnimation;
 
     public FrontPanel() throws HeadlessException {
-        super("Test panel");
+        super("Panel");
 
         initComponents();
     }
 
-    public PanelAnimation getPanelAnimation() {
-        return panelAnimation;
+    public ComponentAnimation getComponentAnimation() {
+        return componentAnimation;
     }
 
-    public FrontPanel setPanelAnimation(PanelAnimation panelAnimation) {
-        this.panelAnimation = panelAnimation;
+    public FrontPanel setComponentAnimation(ComponentAnimation componentAnimation) {
+        this.componentAnimation = componentAnimation;
         return this;
     }
 
     private void initComponents() {
 
+        checkBoxPanel = new CheckBoxPanel();
+        treePanel = new TreePanel("Festus");
+
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Test panel");
-//        setResizable(false);
+        setTitle("Panel");
+        setResizable(false);
         addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseEntered(MouseEvent e) {
-                thisMouseEntered(e);
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                thisMouseExited(e);
+            public void mouseClicked(MouseEvent e)  {
+                thisMouseClicked(e);
             }
         });
 
@@ -64,27 +65,20 @@ public class FrontPanel extends JFrame {
 
         add(dialogPane);
 
-        changeSize(400, 0);
+        utils.changeBounds(this, 400, 0);
 
     }
 
-    private void thisMouseEntered(MouseEvent e) {
-    }
-
-    private void thisMouseExited(MouseEvent e) {
-    }
-
-    private void changeSize(int width, int height) {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int locationX = (screenSize.width - width);
-        int locationY = height;
-        setBounds(locationX, locationY, width, screenSize.height);
+    private void thisMouseClicked(MouseEvent e) {
+        if (componentAnimation != null){
+            componentAnimation.makeUI(this);
+        }
     }
 
     public static void main(String args[]) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrontPanel().setPanelAnimation(new Fade()).setVisible(true);
+                new FrontPanel().setComponentAnimation(new Fade()).setVisible(true);
             }
         });
     }
