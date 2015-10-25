@@ -17,21 +17,27 @@ public class Fade implements ComponentAnimation {
     private Utils utils = new Utils();
 
     private Timer timer;
-    private int min = 20;
-    private int max = 400;
-    private int alpha = max;
+    private final int delay;
+    private final int min;
+    private final int max;
+    private int alpha;
     private int increment = -5;
+
+    public Fade(int delay, int min, int max) {
+        this.delay = delay;
+        this.min = min;
+        this.max = max;
+        this.alpha = max;
+    }
 
     @Override
     public void makeUI(Component component) {
 
         if (timer != null && timer.isRunning()) return;
-        timer = new Timer(25, new ActionListener() {
+        timer = new Timer(delay, new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 alpha += increment;
-                int locationX = (screenSize.width - alpha);
-                int locationY = 0;
                 if (alpha >= max) {
                     alpha = max;
                     increment = -increment;

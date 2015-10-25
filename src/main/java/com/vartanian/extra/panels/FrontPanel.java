@@ -21,8 +21,8 @@ public class FrontPanel extends JFrame {
 
     private static final Logger LOG = LogManager.getLogger(FrontPanel.class);
     private Utils utils = new Utils();
-    private CheckBoxPanel checkBoxPanel = new CheckBoxPanel();
-    private TreePanel treePanel = new TreePanel();
+    private CheckBoxPanel checkBoxPanel;
+    private TreePanel treePanel;
 
     private ComponentAnimation componentAnimation;
 
@@ -78,7 +78,7 @@ public class FrontPanel extends JFrame {
     public static void main(String args[]) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrontPanel().setComponentAnimation(new Fade()).setVisible(true);
+                new FrontPanel().setComponentAnimation(new Fade(25, 20, 400)).setVisible(true);
             }
         });
     }

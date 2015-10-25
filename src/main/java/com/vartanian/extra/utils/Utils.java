@@ -51,6 +51,21 @@ public class Utils {
         return null;
     }
 
+    public void setFont(Component component, String textFont) {
+        Font font = null;
+        boolean find = false;
+        if (textFont != null && !(find = findFont(textFont))){
+            String path = new StringBuilder("fonts/").append(textFont.toLowerCase()).append(".ttf").toString();
+            font = createFont(getClass().getClassLoader(), path);
+            find = registerFont(font);
+        }
+
+        if (find && font != null){
+            FontUIResource fontUIResource = new FontUIResource(font.getFontName(), 0, 14);
+            component.setFont(fontUIResource);
+        }
+    }
+
     public void changeBounds(Component component, int width, int height) {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int locationX = (screenSize.width - width);

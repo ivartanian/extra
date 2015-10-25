@@ -36,18 +36,8 @@ public class TreePanel extends JPanel {
         createNodes(top);
 
         tree = new JTree(top);
-        Font font = null;
-        boolean find = false;
-        if (this.textFont != null && !(find = utils.findFont(this.textFont))){
-            String path = new StringBuilder("fonts/").append(this.textFont.toLowerCase()).append(".ttf").toString();
-            font = utils.createFont(getClass().getClassLoader(), path);
-            find = utils.registerFont(font);
-        }
 
-        if (find && font != null){
-            FontUIResource fontUIResource = new FontUIResource(font.getFontName(), 0, 14);
-            tree.setFont(fontUIResource);
-        }
+        utils.setFont(tree, textFont);
 
         tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 
